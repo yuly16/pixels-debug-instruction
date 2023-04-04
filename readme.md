@@ -251,7 +251,9 @@ cd /scratch/liyu/opt/pixels
 java -jar ./sbin/pixels-sink-*-full.jar
 ```
 
-And then type
+And then type the following command
+
+Enable encoding:
 ```
 LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/customer -d tpch -t customer -n 319150 -r \| -c 1
 LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/lineitem -d tpch -t lineitem -n 600040 -r \| -c 1
@@ -262,6 +264,19 @@ LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/partsupp -d tpch -t pa
 LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/region -d tpch -t region -n 10 -r \| -c 1
 LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/supplier -d tpch -t supplier -n 333340 -r \| -c 1
 ```
+
+Disable encoding:
+```
+LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/customer -d tpch -t customer -n 319150 -r \| -c 1 -e 0
+LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/lineitem -d tpch -t lineitem -n 600040 -r \| -c 1 -e 0
+LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/nation -d tpch -t nation -n 100 -r \| -c 1 -e 0
+LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/orders -d tpch -t orders -n 638300 -r \| -c 1 -e 0
+LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/part -d tpch -t part -n 769240 -r \| -c 1 -e 0
+LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/partsupp -d tpch -t partsupp -n 360370 -r \| -c 1 -e 0
+LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/region -d tpch -t region -n 10 -r \| -c 1 -e 0
+LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/supplier -d tpch -t supplier -n 333340 -r \| -c 1 -e 0
+```
+
 
 Now the pixel data is in the directory `/scratch/liyu/opt/pixels_file/pixels-tpch-0_1`.
 
