@@ -111,6 +111,7 @@ tmux a -t etcd
 ```
 
 ## f. Start pixels
+Copy the mysql-connector to lib/ and then 
 Run the command
 ```
 liyu@diascld31:/scratch/liyu/opt/pixels$ ./sbin/start-pixels.sh
