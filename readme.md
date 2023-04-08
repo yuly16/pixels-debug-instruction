@@ -329,3 +329,39 @@ trino:tpch> select count(*) from lineitem;
 (1 row)
 ```
 
+## 2. Debug `pixels-sink`
+
+### a. change `pixels.properties`
+```
+pixel.stride=5
+row.group.size=1
+```
+
+The unit of `row.group.size` is byte, not row. 
+
+### d. edit pixels repo
+
+Change `DEFAULT_SIZE` in `VectorizedRowBatch.java` to 5. This parameter means that each time we process 5 rows. The 5 rows cannot be seperated to different row group. This is why we set `row.group.size` as 1 byte. Now we designate the row count in each row group as 5. 
+
+Then run `run.sh` to compile the pixels
+
+### c. run `pixels-sink`
+
+```
+java -jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:30001 ./sbin/pixels-sink-*-full.jar
+```
+
+### d. run JVM debugger on Intellij
+![8a42804bd717101df834cf6141637d8](https://user-images.githubusercontent.com/41314695/230728196-5be3e695-1f41-4bb8-b300-405178a5f56c.png)
+
+
+### e. command on `pixels-sink`
+
+```
+LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/nation -s tpch -t nation -n 10 -r \| -c 1 -e 0
+```
+
+Here we set `-n` as 10. `n` represents the maximal row in a pixels file. 
+
+
+
