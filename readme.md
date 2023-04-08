@@ -208,7 +208,7 @@ Splits: 35 total, 35 done (100.00%)
 0.18 [8 rows, 166B] [43 rows/s, 907B/s]
 ```
 
-## i. write the LAYOUTS in mysql
+### i. write the LAYOUTS in mysql
 The command to write the LAYOUTS in mysql is in the file `/scratch/liyu/opt/pixels/scripts/sql/tpch_0_1_layouts.sql`. 
 
 Notice: the parameter `file:///scratch/liyu/opt/pixels_file/pixels-tpch-0_1/customer/v-0-order/` is the pixel data in the local file system. 
@@ -245,7 +245,7 @@ mkdir -p /scratch/liyu/opt/pixels_file/pixels-tpch-0_1/supplier/v-0-order/
 mkdir -p /scratch/liyu/opt/pixels_file/pixels-tpch-0_1/supplier/v-0-compact/
 ```
 
-## i. Run pixels-sink
+### j. Run pixels-sink
 Under `PIXELS` directory, run 
 ```
 cd /scratch/liyu/opt/pixels
@@ -282,7 +282,7 @@ LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/supplier -s tpch -t su
 Now the pixel data is in the directory `/scratch/liyu/opt/pixels_file/pixels-tpch-0_1`.
 
 
-## j. run tpch query
+### k. run tpch query
 
 
 ```
@@ -328,3 +328,4 @@ trino:tpch> select count(*) from lineitem;
  600572
 (1 row)
 ```
+
