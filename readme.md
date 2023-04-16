@@ -329,6 +329,11 @@ trino:tpch> select count(*) from lineitem;
 (1 row)
 ```
 
+### l. summary of adding a new pxl dataset
+* schema.sql: modify schema name
+* layout.sql: modify path and tbl_id
+* pixels-sink: modify path and schema
+
 ## 2. Debug `pixels-sink`
 
 ### a. change `pixels.properties`
