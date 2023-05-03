@@ -368,5 +368,12 @@ LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/nation -s tpch -t nati
 
 Here we set `-n` as 10. `n` represents the maximal row in a pixels file. 
 
+## 3. Start vtune
+```
+cd /opt/intel/oneapi/vtune/lastest
+source vtune-vars.sh
+vtune-backend --web-port=9080 --enable-server-profiling --allow-remote-access --reset-passphrase --data-directory /scratch/liyu/opt/vtune
+
+```
 
 
