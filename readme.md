@@ -376,4 +376,7 @@ vtune-backend --web-port=9080 --enable-server-profiling --allow-remote-access --
 
 ```
 
+## 4. Check page cache
+
+Under Linux, you can check the page cache size via the command `free -w -h`. The page cache size is indicated in the cache column. 
 
