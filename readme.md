@@ -245,25 +245,25 @@ mkdir -p /scratch/liyu/opt/pixels_file/pixels-tpch-0_1/supplier/v-0-order/
 mkdir -p /scratch/liyu/opt/pixels_file/pixels-tpch-0_1/supplier/v-0-compact/
 ```
 
-### j. Run pixels-sink
+### j. Run pixels-cli
 Under `PIXELS` directory, run 
 ```
 cd /scratch/liyu/opt/pixels
-java -jar ./sbin/pixels-sink-*-full.jar
+java -jar ./sbin/pixels-cli-*-full.jar
 ```
 
 And then type the following command
 
 Enable encoding:
 ```
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/customer -s tpch -t customer -n 319150 -r \| -c 1
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/lineitem -s tpch -t lineitem -n 600040 -r \| -c 1
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/nation -s tpch -t nation -n 100 -r \| -c 1
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/orders -s tpch -t orders -n 638300 -r \| -c 1
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/part -s tpch -t part -n 769240 -r \| -c 1
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/partsupp -s tpch -t partsupp -n 360370 -r \| -c 1
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/region -s tpch -t region -n 10 -r \| -c 1
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/supplier -s tpch -t supplier -n 333340 -r \| -c 1
+LOAD -o file:///data/tpch/100g/customer -s tpch -t customer -n 319150 -r \| -c 1
+LOAD -o file:///data/tpch/100g/lineitem -s tpch -t lineitem -n 600040 -r \| -c 1
+LOAD -o file:///data/tpch/100g/nation -s tpch -t nation -n 100 -r \| -c 1
+LOAD -o file:///data/tpch/100g/orders -s tpch -t orders -n 638300 -r \| -c 1
+LOAD -o file:///data/tpch/100g/part -s tpch -t part -n 769240 -r \| -c 1
+LOAD -o file:///data/tpch/100g/partsupp -s tpch -t partsupp -n 360370 -r \| -c 1
+LOAD -o file:///data/tpch/100g/region -s tpch -t region -n 10 -r \| -c 1
+LOAD -o file:///data/tpch/100g/supplier -s tpch -t supplier -n 333340 -r \| -c 1
 ```
 
 Disable encoding:
