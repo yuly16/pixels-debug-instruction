@@ -268,14 +268,14 @@ LOAD -o file:///data/tpch/100g/supplier -s tpch -t supplier -n 333340 -r \| -c 1
 
 Disable encoding:
 ```
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/customer -s tpch -t customer -n 319150 -r \| -c 1 -e 0
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/lineitem -s tpch -t lineitem -n 600040 -r \| -c 1 -e 0
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/nation -s tpch -t nation -n 100 -r \| -c 1 -e 0
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/orders -s tpch -t orders -n 638300 -r \| -c 1 -e 0
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/part -s tpch -t part -n 769240 -r \| -c 1 -e 0
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/partsupp -s tpch -t partsupp -n 360370 -r \| -c 1 -e 0
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/region -s tpch -t region -n 10 -r \| -c 1 -e 0
-LOAD -f pixels -o file:///scratch/liyu/opt/data/tpch-0_1g/supplier -s tpch -t supplier -n 333340 -r \| -c 1 -e 0
+LOAD -o file:///scratch/liyu/opt/data/tpch-1/customer -s tpch_1 -t customer -n 319150 -r \| -c 1 -e 0
+LOAD -o file:///scratch/liyu/opt/data/tpch-1/lineitem -s tpch_1 -t lineitem -n 600040 -r \| -c 1 -e 0
+LOAD -o file:///scratch/liyu/opt/data/tpch-1/nation -s tpch_1 -t nation -n 100 -r \| -c 1 -e 0
+LOAD -o file:///scratch/liyu/opt/data/tpch-1/orders -s tpch_1 -t orders -n 638300 -r \| -c 1 -e 0
+LOAD -o file:///scratch/liyu/opt/data/tpch-1/part -s tpch_1 -t part -n 769240 -r \| -c 1 -e 0
+LOAD -o file:///scratch/liyu/opt/data/tpch-1/partsupp -s tpch_1 -t partsupp -n 360370 -r \| -c 1 -e 0
+LOAD -o file:///scratch/liyu/opt/data/tpch-1/region -s tpch_1 -t region -n 10 -r \| -c 1 -e 0
+LOAD -o file:///scratch/liyu/opt/data/tpch-1/supplier -s tpch_1 -t supplier -n 333340 -r \| -c 1 -e 0
 ```
 
 
