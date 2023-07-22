@@ -133,13 +133,29 @@ task.max-worker-threads=48
 #task.concurrency=1
 ```
 
-Change two lines in `trino-server/etc/jvm.config`:
+`trino-server/etc/jvm.config`:
 
 ```
-#-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:7005
-```
-```
--javaagent:/scratch/pixels-external/jmx_exporter/jmx_prometheus_javaagent-0.11.0.jar=9102:/scratch/pixels-external/jmx_exporter/presto-jmx.yml
+-server
+-Xmx32G
+-XX:+UseNUMA
+-XX:InitialRAMPercentage=80
+-XX:MaxRAMPercentage=80
+-XX:G1HeapRegionSize=32M
+-XX:+ExplicitGCInvokesConcurrent
+-XX:+ExitOnOutOfMemoryError
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+-XX:ReservedCodeCacheSize=512M
+-XX:PerMethodRecompilationCutoff=10000
+-XX:PerBytecodeRecompilationCutoff=10000
+-Djdk.attach.allowAttachSelf=true
+-Djdk.nio.maxCachedBufferSize=2000000
+-XX:+UnlockDiagnosticVMOptions
+-XX:+UseAESCTRIntrinsics
+# Disable Preventive GC for performance reasons (JDK-8293861)
+-XX:-G1UsePreventiveGC
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:7005
 ```
 
 And then change `etc/catalog/pixels.properties`:
