@@ -152,11 +152,6 @@ pixels.config=/scratch/liyu/opt/pixels/pixels.properties
 lambda.switch=off
 local.scan.concurrency=40
 clean.local.result=true
-output.scheme=s3
-output.folder=output-folder-dummy
-output.endpoint=output-endpoint-dummy
-output.access.key=lambda
-output.secret.key=password
 ```
 And run the command 
 ```
