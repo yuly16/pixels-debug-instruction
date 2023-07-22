@@ -125,8 +125,8 @@ Edit the file `trino-server/etc/config.properties`:
 coordinator=true
 node-scheduler.include-coordinator=true
 http-server.http.port=7080
-query.max-memory=192GB
-query.max-memory-per-node=192GB
+query.max-memory=20GB
+query.max-memory-per-node=20GB
 discovery.uri=http://diascld31.iccluster.epfl.ch:7080
 task.max-worker-threads=48
 #task.min-drivers=1
