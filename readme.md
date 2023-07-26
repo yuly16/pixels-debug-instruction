@@ -364,7 +364,7 @@ Then run `run.sh` to compile the pixels
 ### c. run `pixels-sink`
 
 ```
-java -jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:30001 ./sbin/pixels-sink-*-full.jar
+java -jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:30001 ./sbin/pixels-cli-*-full.jar
 ```
 
 ### d. run JVM debugger on Intellij
